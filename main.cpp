@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -6,11 +7,12 @@ using namespace std;
 #define nl '\n'
 
 //#include "number.h"
+//#include "matrix.h"
 
 class problem {
 public:
 	void solve() {
-		
+
 	}
 };
 
