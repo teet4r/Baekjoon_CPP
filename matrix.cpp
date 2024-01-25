@@ -13,6 +13,7 @@ namespace matrix {
 				istream >> matrix.elements[i][j];
 			}
 		}
+
 		return istream;
 	}
 
@@ -23,6 +24,7 @@ namespace matrix {
 			}
 			ostream << nl;
 		}
+
 		return ostream;
 	}
 

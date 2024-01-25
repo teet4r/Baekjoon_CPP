@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
@@ -12,7 +11,7 @@ using namespace std;
 class problem {
 public:
 	void solve() {
-
+		
 	}
 };
 

@@ -16,7 +16,7 @@ namespace matrix {
 		size_t colum_size;
 		vector<vector<int>> elements;
 	public:
-		matrix(size_t row_size, size_t column_size, int value = 0);
+		matrix(size_t row_size, size_t column_size, int value);
 
 		friend istream &operator>>(istream &istream, matrix &matrix);
 		friend ostream &operator<<(ostream &ostream, const matrix &matrix);
