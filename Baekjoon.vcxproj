@@ -128,11 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="date.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix.cpp" />
     <ClCompile Include="number.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="date.h" />
     <ClInclude Include="matrix.h" />
     <ClInclude Include="number.h" />
     <ClInclude Include="resource.h" />

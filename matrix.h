@@ -17,10 +17,8 @@ namespace matrix {
 		vector<vector<int>> elements;
 	public:
 		matrix(size_t row_size, size_t column_size, int value);
-
+		matrix operator*(matrix &other);
 		friend istream &operator>>(istream &istream, matrix &matrix);
 		friend ostream &operator<<(ostream &ostream, const matrix &matrix);
-
-		matrix operator*(matrix &other);
 	};
 }

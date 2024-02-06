@@ -7,6 +7,20 @@ namespace matrix {
 		elements.assign(row_size, vector<int>(column_size, value));
 	}
 
+	matrix matrix::operator*(matrix &other) {
+		matrix new_matrix(this->row_size, other.colum_size);
+
+		for (int i = 0; i < this->row_size; ++i) {
+			for (int j = 0; j < other.colum_size; ++j) {
+				for (int k = 0; k < this->colum_size; ++k) {
+					new_matrix.elements[i][j] += this->elements[i][k] * other.elements[k][j];
+				}
+			}
+		}
+
+		return new_matrix;
+	}
+
 	istream &operator>>(istream &istream, matrix &matrix) {
 		for (int i = 0; i < matrix.row_size; ++i) {
 			for (int j = 0; j < matrix.colum_size; ++j) {
@@ -26,19 +40,5 @@ namespace matrix {
 		}
 
 		return ostream;
-	}
-
-	matrix matrix::operator*(matrix &other) {
-		matrix new_matrix(this->row_size, other.colum_size);
-
-		for (int i = 0; i < this->row_size; ++i) {
-			for (int j = 0; j < other.colum_size; ++j) {
-				for (int k = 0; k < this->colum_size; ++k) {
-					new_matrix.elements[i][j] += this->elements[i][k] * other.elements[k][j];
-				}
-			}
-		}
-
-		return new_matrix;
 	}
 }
