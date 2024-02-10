@@ -93,20 +93,6 @@ namespace number {
 	}
 
 	bool is_maybe_prime(int n) {
-		const int base[3] = { 2, 7, 61 };
-
-		for (int i = 0; i < 3; ++i) {
-			if (!miller_rabin_primality_test(n, base[i])) {
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	bool is_maybe_prime(long long n) {
-		const long long base[3] = { 2, 7, 61 };
-
 		for (int i = 0; i < 3; ++i) {
 			if (!miller_rabin_primality_test(n, base[i])) {
 				return false;

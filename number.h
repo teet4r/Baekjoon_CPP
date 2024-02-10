@@ -26,8 +26,9 @@ namespace number {
 	*/
 	double get_power(long long base, long long exponent, long long modulo);
 
+	const int base[3] = { 2, 7, 61 };
 	/*
-	* if passed the test, return true(maybe it is prime), or false
+	* if passed the test, return true(maybe it's a prime), or false
 	* O((logN)^3)
 	*/
 	bool miller_rabin_primality_test(long long n, long long a);
@@ -37,7 +38,6 @@ namespace number {
 	* O(K(logN)^3), K is iteration count of a
 	*/
 	bool is_maybe_prime(int n);
-	bool is_maybe_prime(long long n);
 
 	/*
 	* O(N^(0.5))

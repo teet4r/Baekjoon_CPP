@@ -9,16 +9,16 @@ using namespace std;
 #define nl '\n'
 #endif
 
-namespace matrix {
-	class matrix {
-	private:
-		size_t row_size;
-		size_t colum_size;
-		vector<vector<int>> elements;
-	public:
-		matrix(size_t row_size, size_t column_size, int value);
-		matrix operator*(matrix &other);
-		friend istream &operator>>(istream &istream, matrix &matrix);
-		friend ostream &operator<<(ostream &ostream, const matrix &matrix);
-	};
-}
+class matrix {
+private:
+	size_t row_size;
+	size_t colum_size;
+	vector<vector<int>> elements;
+public:
+	matrix(size_t row_size, size_t column_size, int value);
+	matrix operator+(matrix &other);
+	matrix operator*(matrix &other);
+private:
+	friend istream &operator>>(istream &istream, matrix &matrix);
+	friend ostream &operator<<(ostream &ostream, const matrix &matrix);
+};
