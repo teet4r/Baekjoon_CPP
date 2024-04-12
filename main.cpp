@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define fast_io (ios::sync_with_stdio(false), std::cin.tie(NULL), cout.tie(NULL))
+#define fast_io (ios::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL))
 #define nl '\n'
 
 //#include "number.h"
@@ -10,9 +10,10 @@ using namespace std;
 //#include "date.h"
 
 class problem {
+private:
 public:
 	void solve() {
-
+		
 	}
 };
 
