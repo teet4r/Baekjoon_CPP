@@ -10,10 +10,9 @@ using namespace std;
 //#include "date.h"
 
 class problem {
-private:
 public:
 	void solve() {
-		
+
 	}
 };
 
