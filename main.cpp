@@ -10,19 +10,21 @@ using namespace std;
 //#include "matrix.h"
 //#include "date.h"
 
-class problem {
-public:
-	void solve() {
-		
+int fast_power(int base, int exp) {
+	int r = 1;
+
+	while (exp) {
+		if (exp & 1)
+			r *= base; // % c;
+		exp >>= 1;
+		base *= base; // %c;
 	}
-};
+
+	return r;
+}
 
 int main() {
 	fast_io;
-
-	problem problem;
-
-	problem.solve();
 
 	return 0;
 }
