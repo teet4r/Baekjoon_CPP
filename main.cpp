@@ -23,6 +23,14 @@ int fast_power(int base, int exp) {
 	return r;
 }
 
+bool is_leapyear(int y) {
+	if (!(y % 400))
+		return true;
+	if (!(y % 100))
+		return false;
+	return !(y % 4);
+}
+
 int main() {
 	fast_io;
 
