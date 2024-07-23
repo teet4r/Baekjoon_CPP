@@ -20,10 +20,7 @@ namespace date {
 		if (!(y % 100)) {
 			return false;
 		}
-		if (!(y % 4)) {
-			return true;
-		}
-		return false;
+		return !(y % 4);
 	}
 
 	int date::get_total_days() {

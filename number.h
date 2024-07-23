@@ -11,20 +11,50 @@ using namespace std;
 #endif
 
 namespace number {
-	/*
-	* using Sieve of Eratosthenes, O(N(log(logN)))
-	*/
+	/// <summary>
+	/// 에라토스테네스의 체를 사용하여 소수들을 container에 추가합니다.
+	/// O(N(log(logN)))에 수행됩니다.
+	/// </summary>
+	/// <param name="max_integer">구하려는 소수의 범위</param>
+	/// <param name="container">구한 소수들을 담을 컨테이너</param>
 	void get_primes(int max_integer, vector<int> &container);
 
-	/*
-	* O(N^(0.5))
-	*/
+
+
+	/// <summary>
+	/// n의 약수들을 container에 추가합니다.
+	/// O(N^(0.5))에 수행됩니다.
+	/// </summary>
+	/// <param name="n">구하려는 약수의 범위</param>
+	/// <param name="container">구한 약수들을 담을 컨테이너</param>
 	void get_divisors(int n, vector<int> &container);
 
-	/*
-	* using Divide-and-Conquer, O(logN)
-	*/
-	double get_power(long long base, long long exponent, long long modulo);
+
+
+	/// <summary>
+	/// 분할-정복을 이용한 빠른 거듭제곱 연산입니다.
+	/// O(logN)에 수행됩니다.
+	/// </summary>
+	/// <param name="base">밑</param>
+	/// <param name="exp">지수</param>
+	/// <returns>거듭제곱 값을 반환합니다.</returns>
+	int fast_power(int base, int exp);
+	long long fast_power(long long base, int exp);
+
+
+
+	/// <summary>
+	/// 분할-정복을 이용한 빠른 거듭제곱 연산입니다.
+	/// O(logN)에 수행됩니다.
+	/// </summary>
+	/// <param name="base">밑</param>
+	/// <param name="exp">지수</param>
+	/// <param name="modulo">모듈로 연산 지원</param>
+	/// <returns>모듈로 연산이 적용된 거듭제곱 값을 반환합니다.</returns>
+	int fast_power(int base, int exp, int modulo);
+	long long fast_power(long long base, int exp, int modulo);
+
+
 
 	const int base[3] = { 2, 7, 61 };
 	/*
@@ -43,4 +73,27 @@ namespace number {
 	* O(N^(0.5))
 	*/
 	bool is_prime(int n);
+
+
+
+	/// <summary>
+	/// 등차수열의 합
+	/// </summary>
+	/// <param name="n">항의 개수</param>
+	/// <param name="a">초항</param>
+	/// <param name="d">공차</param>
+	/// <returns>등차수열의 합을 반환합니다.</returns>
+	int arithmetical_sequence_sum(int n, int a, int d);
+
+
+
+	/// <summary>
+	/// 등차수열의 합
+	/// </summary>
+	/// <param name="n">항의 개수</param>
+	/// <param name="a">초항</param>
+	/// <param name="l">마지막 항</param>
+	/// <param name="_">함수 구별자</param>
+	/// <returns>등차수열의 합을 반환합니다.</returns>
+	int arithmetical_sequence_sum(int n, int a, int l, int _);
 }

@@ -2,7 +2,8 @@
 
 namespace number {
 	void get_primes(int max_integer, vector<int> &container) {
-		if (max_integer < 2) {
+		if (max_integer <= 0) {
+			cout << "max_integer는 양수여야 합니다.\n";
 			return;
 		}
 
@@ -26,6 +27,7 @@ namespace number {
 
 	void get_divisors(int n, vector<int> &container) {
 		if (n < 1) {
+			cout << "n은 1 이상이어야 합니다.\n";
 			return;
 		}
 
@@ -34,38 +36,64 @@ namespace number {
 		for (int i = 1; i <= sqrt_n; ++i) {
 			if (!(n % i)) {
 				container.push_back(i);
-
-				int other_divisor = n / i;
-
-				if (i != other_divisor) {
-					container.push_back(other_divisor);
-				}
+				container.push_back(n / i);
 			}
 		}
+
+		if (sqrt_n * sqrt_n == n)
+			container.pop_back();
 	}
 
-	double get_power(long long base, long long exponent, long long modulo) {
-		long long result = 1;
-		bool is_fraction = exponent < 0;
+	int fast_power(int base, int exp) {
+		int r = 1;
 
-		if (exponent < 0) {
-			exponent *= -1;
+		while (exp) {
+			if (exp & 1)
+				r *= base;
+			exp >>= 1;
+			base *= base;
 		}
 
-		base %= modulo;
-		while (exponent) {
-			if (exponent & 1) {
-				result = (result * base) % modulo;
-			}
-			base = (base * base) % modulo;
-			exponent >>= 1;
+		return r;
+	}
+
+	long long fast_power(long long base, int exp) {
+		long long r = 1;
+
+		while (exp) {
+			if (exp & 1)
+				r *= base;
+			exp >>= 1;
+			base *= base;
 		}
 
-		if (is_fraction) {
-			return 1 / (double)result;
+		return r;
+	}
+
+	int fast_power(int base, int exp, int modulo) {
+		int r = 1;
+
+		while (exp) {
+			if (exp & 1)
+				r *= base % modulo;
+			exp >>= 1;
+			base *= base % modulo;
 		}
 
-		return (double)result;
+		return r;
+	}
+
+	long long fast_power(long long base, int exp, int modulo) {
+		long long r = 1;
+
+		while (exp) {
+			if (exp & 1)
+				r *= base % modulo;
+			exp >>= 1;
+			base *= base % modulo;
+		}
+
+		return r;
 	}
 
 	bool miller_rabin_primality_test(long long n, long long a) {
@@ -79,7 +107,7 @@ namespace number {
 		long long k = n - 1;
 
 		while (1) {
-			long long temp = get_power(a, k, n);
+			long long temp = fast_power(a, k, n);
 
 			if (temp == n - 1) {
 				return true;
@@ -116,5 +144,13 @@ namespace number {
 		}
 
 		return true;
+	}
+
+	int arithmetical_sequence_sum(int n, int a, int d) {
+		return (n * ((a << 1) + (n - 1) * d)) >> 1;
+	}
+
+	int arithmetical_sequence_sum(int n, int a, int l, int _) {
+		return (n * (a + l)) >> 1;
 	}
 }
