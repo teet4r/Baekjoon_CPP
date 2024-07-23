@@ -14,21 +14,18 @@ namespace date {
 	}
 
 	bool date::is_leapyear() {
-		if (!(y % 400)) {
+		if (!(y % 400))
 			return true;
-		}
-		if (!(y % 100)) {
+		if (!(y % 100))
 			return false;
-		}
 		return !(y % 4);
 	}
 
 	int date::get_total_days() {
 		int days = (y - 1) * 365 + day_sum_in_a_year[m - 1] + d + (y - 1) / 4 - (y - 1) / 100 + (y - 1) / 400;
 
-		if (is_leapyear() && m >= 3) {
+		if (is_leapyear() && m >= 3)
 			++days;
-		}
 
 		return days;
 	}
