@@ -72,6 +72,12 @@ namespace number {
 	/*
 	* O(N^(0.5))
 	*/
+
+	/// <summary>
+	/// n이 소수인지 아닌지 판정합니다.
+	/// </summary>
+	/// <param name="n">소수인지 판정할 수</param>
+	/// <returns>n이 소수라면 true, 아니라면 false를 반환합니다.</returns>
 	bool is_prime(int n);
 
 

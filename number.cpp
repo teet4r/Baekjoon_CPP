@@ -2,10 +2,8 @@
 
 namespace number {
 	void get_primes(int max_integer, vector<int> &container) {
-		if (max_integer <= 0) {
-			cout << "max_integer는 양수여야 합니다.\n";
+		if (max_integer < 2)
 			return;
-		}
 
 		vector<bool> primes(max_integer + 1, true);
 		int sqrt_n = sqrt(max_integer);
@@ -21,10 +19,8 @@ namespace number {
 	}
 
 	void get_divisors(int n, vector<int> &container) {
-		if (n < 1) {
-			cout << "n은 1 이상이어야 합니다.\n";
+		if (n < 1)
 			return;
-		}
 
 		int sqrt_n = sqrt(n);
 
