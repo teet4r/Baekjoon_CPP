@@ -32,6 +32,17 @@ namespace number {
 
 
 	/// <summary>
+	/// 거듭제곱 연산입니다.
+	/// O(n)에 수행됩니다.
+	/// </summary>
+	/// <param name="base">밑</param>
+	/// <param name="exp">지수</param>
+	/// <returns>거듭제곱 값을 반환합니다.</returns>
+	int power(int base, int exp);
+
+
+
+	/// <summary>
 	/// 분할-정복을 이용한 빠른 거듭제곱 연산입니다.
 	/// O(logN)에 수행됩니다.
 	/// </summary>

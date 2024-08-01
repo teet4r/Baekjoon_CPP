@@ -34,6 +34,15 @@ namespace number {
 			container.pop_back();
 	}
 
+	int power(int base, int exp) {
+		int r = 1;
+
+		while (exp--)
+			r *= base;
+
+		return r;
+	}
+
 	int fast_power(int base, int exp) {
 		int r = 1;
 
