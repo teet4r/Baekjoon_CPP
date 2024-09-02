@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
@@ -113,4 +114,14 @@ namespace number {
 	/// <param name="_">함수 구별자</param>
 	/// <returns>등차수열의 합을 반환합니다.</returns>
 	int arithmetical_sequence_sum(int n, int a, int l, int _);
+
+	
+
+	/// <summary>
+	/// 큰 수의 합을 계산합니다.
+	/// </summary>
+	/// <param name="big_int_a">'0' ~ '9'만 포함된 숫자 문자열 a</param>
+	/// <param name="big_int_b">'0' ~ '9'만 포함된 숫자 문자열 b</param>
+	/// <returns>합을 반환합니다.</returns>
+	string add(string &big_int_a, string &big_int_b);
 }

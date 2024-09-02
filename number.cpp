@@ -143,4 +143,29 @@ namespace number {
 	int arithmetical_sequence_sum(int n, int a, int l, int _) {
 		return (n * (a + l)) >> 1;
 	}
+
+	string add(string &big_int_a, string &big_int_b) {
+		int ai = big_int_a.size() - 1;
+		int bi = big_int_b.size() - 1;
+		bool carry = false;
+		string r(max(big_int_a.size(), big_int_b.size()) + 1, '0');
+		int ri = r.size() - 1;
+
+		while (ai >= 0 || bi >= 0) {
+			int ad = ai >= 0 ? big_int_a[ai] - '0' : 0;
+			int bd = bi >= 0 ? big_int_b[bi] - '0' : 0;
+			int sum = ad + bd + carry;
+
+			r[ri--] = '0' + sum % 10;
+			carry = sum > 9;
+			--ai, --bi;
+		}
+
+		if (carry)
+			r[ri] = '0' + carry;
+		else
+			r = r.substr(1);
+
+		return r;
+	}
 }
